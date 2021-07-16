@@ -1,0 +1,90 @@
+
+/*https://unsplash.com/backgrounds/nature/floral*/
+/*https://images.unsplash.com/photo-1543157145-f78c636d023d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80*/
+/*https://images.unsplash.com/photo-1574310594082-652072f811c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80*/
+
+a {
+    color: grey;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/* licence credit*/
+/*<a href='https://pngtree.com/free-backgrounds'>free background photos from pngtree.com</a>*/
+.jumbotron {
+    background: url("/static/img/background2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50%;
+}
+
+/*h1{*/
+/*    color: blue;*/
+/*}*/
+
+.rounded-social-buttons {
+    text-align: center;
+}
+
+.rounded-social-buttons .social-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 0.125rem solid transparent;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    color: #fefefe;
+    font-size: 1.5625rem;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 1.6875rem;
+    transition: all 0.5s ease;
+    margin-right: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.rounded-social-buttons .social-button:hover, .rounded-social-buttons .social-button:focus {
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+    font-size: 20px;
+}
+
+.rounded-social-buttons .social-button.twitter {
+    background: #212121;
+}
+
+.rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
+    color: #2962ff;
+    background: #f9f9f9;
+    border-color: #2962ff;
+}
+
+.rounded-social-buttons .social-button.linkedin {
+    background: #212121;
+}
+
+.rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+    color: #2962ff;
+    background: #f9f9f9;
+    border-color: #2962ff;
+}
+
+.rounded-social-buttons .social-button.instagram {
+    background: #212121;
+}
+
+.rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
+    color: #2962ff;
+    background: #f9f9f9;
+    border-color: #2962ff;;
+}

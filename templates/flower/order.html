@@ -1,0 +1,79 @@
+{% extends 'flower/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    {% load widget_tweaks %}
+    <div class="container mb-5">
+
+    <h1>Order Your Bouquets</h1>
+    <h2> {{ message }} </h2>
+    {% if created_order_pk %}
+        <a href="{% url 'edit_order' created_order_pk %}">Edit your oder</a>
+    {% endif %}
+
+
+
+    <form action="{% url 'order' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group {% if field.errors %}alert alert-danger{% endif %}">
+{#        {{ form|crispy }}#}
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {% render_field field class="form-control" %}
+
+
+            </div>
+        {% endfor %}
+
+        <input type="submit" value="Order">
+    </form>
+
+
+    <br>
+    <br>
+    <h5>Do you want to order more than one Bouquet? Guess what with us you can, Just click the link below.</h5>
+
+    <form action="{% url 'multiple_order' %}" method="get">
+        {{ multiple_form }}
+        <input type="submit" value="Multiple Order">
+    </form>
+    </div>
+{% endblock %}
+
+
+{#{% extends 'flower/base.html' %}#}
+{#{% load crispy_forms_tags %}#}
+{#{% crispy form %}#}
+{#{% block body %}#}
+{##}
+{#    <div class="container mb-5">#}
+{##}
+{#        <h1>Order Your Bouquets</h1>#}
+{#        <h2> {{ message }} </h2>#}
+{#        {% if created_order_pk %}#}
+{#            <a href="{% url 'edit_order' created_order_pk %}">Edit your oder</a>#}
+{#        {% endif %}#}
+{##}
+{#        <h4>Contact us directly if you have any questions</h4>#}
+{##}
+{#        <form action="{% url 'order' %}" method="post">#}
+{#            {% csrf_token %}#}
+{#            {{ field.errors }}#}
+{#            {{ form|crispy }}#}
+{#            <input type="submit" value="Order">#}
+{#        </form>#}
+{##}
+{##}
+{#        <br>#}
+{#        <br>#}
+{#        Want to order more than one Bouquet?#}
+{##}
+{#        <form action="{% url 'multiple_order' %}" method="get">#}
+{#            {{ multiple_form }}#}
+{#            <input type="submit" value="Multiple Order">#}
+{#        </form>#}
+{##}
+{#    </div>#}
+{#{% endblock %}#}

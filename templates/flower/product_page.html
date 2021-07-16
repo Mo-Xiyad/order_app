@@ -1,0 +1,52 @@
+{% extends 'flower/base.html' %}
+{% block body %}
+    <div class="container">
+        <h1> Our Products and Services</h1>
+        <div class="row">
+            <div class="col-12">
+                {% for product in object %}
+                    <table class="table table-image">
+                        <thead>
+                        <tr>
+{#                            <th scope="col"></th>#}
+{#                            <th scope="col"></th>#}
+{#                            <th scope="col"></th>#}
+{#                            <th scope="col"></th>#}
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="w-25">
+                                {% if product.image %}
+                                    <img class="img-fluid img-thumbnail" src='{{ product.image.url }}'
+                                         style='width:150px'/>
+                                {% endif %}
+                            </td>
+                            <td style="width: 200px;">
+                                <h4>{{ product.title }}</h4>
+                            </td>
+                            <td style="width: 500px; padding-left:100px;">
+                                {% if product.content %}
+                                    {{ product.content }}
+                                {% endif %}
+                            </td>
+                            <td style="padding-left:100px;">
+                                {% if product.price %}
+                                    {{ product.price }}
+                                {% endif %}
+                            </td>
+                            <td style="padding-left:100px;">
+                                <a class="btn btn-lg mb-5 ms-5" href="{% url 'slected_item' product.pk %}"> <i class="fas fa-cart-plus"></i> </a>
+                            </td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

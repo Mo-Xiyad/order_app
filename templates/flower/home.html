@@ -1,0 +1,102 @@
+{% extends 'flower/base.html' %}
+{% load static %}
+{% block css %}
+    <style>
+    .signuplink {
+        background-color: #7ba5b8;
+    }
+    </style>
+{% endblock css %}
+{% block body %}
+
+    <div class="container ">
+        <div class="jumbotron">
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="display-4 text-center mt-5 pt-5"><span class="primary_title">Welcome to &nbsp;</span>
+                <span class="secondary_title"> </span>
+                <span class="primary_title">online store.</span>
+            </h1>
+            <br>
+            <br>
+            <div class="text-center">
+                {% if user.is_authenticated %}
+                    <h3 class="right">Welcome {{ user.username }} !!!</h3>
+                {% endif %}
+                <h3 class="lead ms-5 mt-3">Order your bouquets today.</h3>
+                <a class="btn btn-secondary signuplink btn-lg mb-5 ms-5" href="{% url 'order' %}"> Order Now</a>
+            </div>
+        </div>
+
+
+        {#        <img src="{% static 'img/background.jpeg' %}" alt="Home page Image" class="img-fluid">#}
+        {#        <img src="{% static "img/background.jpeg" %}" alt="Uh Oh, didn't show!">#}
+    </div>
+
+
+    <div class="container mt-5">
+        <h1>Dhona's Bridal Bouquets</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aliquam aliquid amet architecto
+            asperiores
+            delectus, distinctio dolor earum esse inventore iste, maiores nemo nobis nulla officia quam sapiente
+            sint.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolores facere qui? Consectetur
+            cupiditate
+            doloribus eligendi harum hic impedit, maxime minus modi necessitatibus omnis perferendis quasi quisquam
+            quo
+            tempora
+            <a href="{% url 'order' %}"> Place your order!</a>
+    </div>
+    <br>
+    <br>
+    <div class="container mb-3">
+        <div class="card-group">
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/bouquet1.jpeg' %}" alt="Card image cap" style="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad
+                        aliquam aliquid amet architecto
+                        asperiores
+                        delectus, distinctio dolor earum esse inventore iste, maiores nemo nobis nulla officia quam
+                        sapiente
+                        sint.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/bouquet5.jpeg' %}" alt="Card image cap" style="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad
+                        aliquam aliquid amet architecto
+                        asperiores
+                        delectus, distinctio dolor earum esse inventore iste, maiores nemo nobis nulla officia quam
+                        sapiente
+                        sint.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top" src="{% static 'img/bouquet2.jpeg' %}" alt="Card image cap" style="">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad
+                        aliquam aliquid amet architecto
+                        asperiores
+                        delectus, distinctio dolor earum esse inventore iste, maiores nemo nobis nulla officia quam
+                        sapiente
+                        sint.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+

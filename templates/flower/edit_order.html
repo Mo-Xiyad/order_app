@@ -1,0 +1,35 @@
+{% extends 'flower/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+    {% load widget_tweaks %}
+    <div class="container mb-5">
+
+        <h1>Edit your order</h1>
+        <h2> {{ message }} </h2>
+        {% if created_order_pk %}
+            <a href="{% url 'edit_order' created_order_pk %}">Edit your oder</a>
+        {% endif %}
+
+
+
+
+
+        <form action="{% url 'edit_order' ordered_bouquet.pk %}" method="post">
+            {% csrf_token %}
+
+        {% for field in FlowerOrderForm %}
+            <div class="form-group {% if field.errors %}alert alert-danger{% endif %}">
+
+
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {% render_field field class="form-control" %}
+                 </div>
+        {% endfor %}
+            <input type="submit" value="Update your order">
+
+        </form>
+    </div>
+{% endblock %}
