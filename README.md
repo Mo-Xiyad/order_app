@@ -59,29 +59,41 @@ You can access the platform through http://localhost:8000/
 Once you've updated your code, simply stop and run the WEB service by running these two commands on another terminal:
 
 
-#### Google OAuth Setup
+## Google OAuth Setup
+
+- Create and configure a new Google APIs project `href="https://console.developers.google.com/apis"` and create a new project.
+- Then, create a new **OAuth client ID** under Credentials. Select **Web application** for the Application type.
+
+- Then, add the Following **under Credentials**:
+- On Authorized JavaScript origins, add the following URIs:
+`http://localhost:8000`
+`http://127.0.0.1:8000`
+
+- On Authorized redirect URIs add the following URIs:
+`http://127.0.0.1:8000/accounts/google/login/callback/`
+`http://127.0.0.1:8000/`
+`http://localhost:8000/`
+
+
+- After a successful OAuth client ID creation, copy Your Client ID and Your Client Secret, you will need them.
+- NEXT: Add a social app in Django admin
 
 Go to http://0.0.0.0:8000/admin as a superuser to the Sites section.
 Edit www.example.com to be localhost.
 
-Then go to the **Social Applications section** and add a new **social application**. 
-Choose Google provider and enter the following credentials:
-- Client id: `225391600233-ct5v9lls215kpi2rs9lh87337th2h2fo.apps.googleusercontent.com`
-- Secret key: `PaD9pL1e3H4NDEqd8Kr16A3o`
+- Open http://127.0.0.1:8000/admin and login to Django Admin. Under Sites click Add and put 127.0.0.1:8000 as both the Domain name and Display name.
 
-On Authorized JavaScript origins, add the following URIs:
-- http://localhost:8000
-- http://127.0.0.1:8000
+#### Then go to the **Social Applications section** and add a new **social application**. 
 
-On Authorized redirect URIs add the following URIs:
-- http://localhost:8000/accounts/google/login/callback/
-- http://127.0.0.1:8000/accounts/google/login/callback/
+- Then, under Social Applications click Add and fill in the details as follows:
 
+- Provider: `Google`
+- Name: `OAuth App`
+- Client id: `The client ID you created`
+- Secret key: `The Secret key you created`
+- Sites: `127.0.0.1:8000`
 
-
-You can only commit the new migration files if **all changes are applied, rollback and re-applied successfully**.
-
-*Be warned that if testing migration fails it will indicate that you did not follow this procedure correctly!*
+*Be warned that if this proccess fails it will indicate that you did not follow this procedure correctly!*
 
 
 ### Static files
